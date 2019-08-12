@@ -6,10 +6,12 @@ var ExpressionVisitor = require('./expr/ExpressionVisitor').ExpressionVisitor;
 
 //////////////////
 // CalcVisitor
-function CalcVisitor() {
+function CalcVisitor(funcList) {
     ExpressionVisitor.call(this);
+    this.funcList = funcList;
     return this;
 }
+
 Object.setPrototypeOf(CalcVisitor.prototype, ExpressionVisitor.prototype);
 
 // Visit a parse tree produced by ExpressionParser#expr_additive.
@@ -105,6 +107,23 @@ CalcVisitor.prototype.visitExpr_multipricative = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ExpressionParser#expr_function.
+ExpressionVisitor.prototype.visitExpr_function = function(ctx) {
+  //console.log("-- visitExpr_function");
+  var token = ctx.getToken(ExpressionLexer.IDENTIFIER, 0);
+  var arg = this.visit(ctx.ex);
+  //console.log(ctx.id);
+  //console.log(ctx.ex);
+  //console.log(token);
+  if (this.funcList[token.symbol.text]) {
+    func = this.funcList[token.symbol.text];
+    return func(arg);
+  } else {
+    return {"result":false, "value":null, "error":"Unknown function name."};
+  }
+};
+
+
 // Visit a parse tree produced by ExpressionParser#expr_unary.
 CalcVisitor.prototype.visitExpr_unary = function(ctx) {
   //console.log("-- visitExpr_unary");
@@ -180,12 +199,17 @@ CalcVisitor.prototype.visitNum = function(ctx) {
 //////////////////
 // Calculator
 function Calculator() {
+  this.funcList = {};
   return this;
 }
 
 
 Calculator.prototype.constructor = Calculator;
 
+// Register function.
+Calculator.prototype.registerFunction = function(funcname, func) {
+  this.funcList[funcname] = func;
+}
 
 // Do calculation.
 Calculator.prototype.doCalc = function(input) {
@@ -197,7 +221,7 @@ Calculator.prototype.doCalc = function(input) {
   parser.buildParseTrees = true;
   var tree = parser.input();
   
-  return tree.accept(new CalcVisitor())[0];
+  return tree.accept(new CalcVisitor(this.funcList))[0];
 };
 
 exports.Calculator = Calculator;

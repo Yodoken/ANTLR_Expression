@@ -42,6 +42,12 @@ ExpressionVisitor.prototype.visitExpr_multipricative = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ExpressionParser#expr_function.
+ExpressionVisitor.prototype.visitExpr_function = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by ExpressionParser#expr_unary.
 ExpressionVisitor.prototype.visitExpr_unary = function(ctx) {
   return this.visitChildren(ctx);
