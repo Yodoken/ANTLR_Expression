@@ -1,4 +1,4 @@
-// Generated from /Users/yodogawa/IdeaProjects/ANTLR/ANTLR_Expression/src/Expression.g4 by ANTLR 4.7.2
+// Generated from src/Expression.g4 by ANTLR 4.7.2
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -38,6 +38,12 @@ ExpressionVisitor.prototype.visitExpr_power = function(ctx) {
 
 // Visit a parse tree produced by ExpressionParser#expr_multipricative.
 ExpressionVisitor.prototype.visitExpr_multipricative = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ExpressionParser#expr_function.
+ExpressionVisitor.prototype.visitExpr_function = function(ctx) {
   return this.visitChildren(ctx);
 };
 
