@@ -7,33 +7,35 @@ var grammarFileName = "Expression.g4";
 
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\u000b)\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
-    "\u0004\u0004\u0005\t\u0005\u0003\u0002\u0003\u0002\u0003\u0002\u0003",
-    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003\u0013",
-    "\n\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0007\u0003\u001e\n",
-    "\u0003\f\u0003\u000e\u0003!\u000b\u0003\u0003\u0004\u0003\u0004\u0003",
-    "\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0003\u0005\u0002\u0003\u0004",
-    "\u0006\u0002\u0004\u0006\b\u0002\u0004\u0003\u0002\u0007\b\u0003\u0002",
-    "\u0005\u0006\u0002)\u0002\n\u0003\u0002\u0002\u0002\u0004\u0012\u0003",
-    "\u0002\u0002\u0002\u0006\"\u0003\u0002\u0002\u0002\b&\u0003\u0002\u0002",
-    "\u0002\n\u000b\u0005\u0004\u0003\u0002\u000b\f\u0007\u0002\u0002\u0003",
-    "\f\u0003\u0003\u0002\u0002\u0002\r\u000e\b\u0003\u0001\u0002\u000e\u0013",
-    "\u0005\b\u0005\u0002\u000f\u0013\u0005\u0006\u0004\u0002\u0010\u0011",
-    "\t\u0002\u0002\u0002\u0011\u0013\u0005\u0004\u0003\u0006\u0012\r\u0003",
-    "\u0002\u0002\u0002\u0012\u000f\u0003\u0002\u0002\u0002\u0012\u0010\u0003",
-    "\u0002\u0002\u0002\u0013\u001f\u0003\u0002\u0002\u0002\u0014\u0015\f",
-    "\u0005\u0002\u0002\u0015\u0016\u0007\t\u0002\u0002\u0016\u001e\u0005",
-    "\u0004\u0003\u0005\u0017\u0018\f\u0004\u0002\u0002\u0018\u0019\t\u0003",
-    "\u0002\u0002\u0019\u001e\u0005\u0004\u0003\u0005\u001a\u001b\f\u0003",
-    "\u0002\u0002\u001b\u001c\t\u0002\u0002\u0002\u001c\u001e\u0005\u0004",
-    "\u0003\u0004\u001d\u0014\u0003\u0002\u0002\u0002\u001d\u0017\u0003\u0002",
-    "\u0002\u0002\u001d\u001a\u0003\u0002\u0002\u0002\u001e!\u0003\u0002",
-    "\u0002\u0002\u001f\u001d\u0003\u0002\u0002\u0002\u001f \u0003\u0002",
-    "\u0002\u0002 \u0005\u0003\u0002\u0002\u0002!\u001f\u0003\u0002\u0002",
-    "\u0002\"#\u0007\u0003\u0002\u0002#$\u0005\u0004\u0003\u0002$%\u0007",
-    "\u0004\u0002\u0002%\u0007\u0003\u0002\u0002\u0002&\'\u0007\n\u0002\u0002",
-    "\'\t\u0003\u0002\u0002\u0002\u0005\u0012\u001d\u001f"].join("");
+    "\u0003\f+\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
+    "\u0004\u0005\t\u0005\u0003\u0002\u0003\u0002\u0003\u0002\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003\u0013\n",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0007\u0003\u001e\n\u0003",
+    "\f\u0003\u000e\u0003!\u000b\u0003\u0003\u0004\u0003\u0004\u0003\u0004",
+    "\u0003\u0004\u0003\u0005\u0003\u0005\u0005\u0005)\n\u0005\u0003\u0005",
+    "\u0002\u0003\u0004\u0006\u0002\u0004\u0006\b\u0002\u0004\u0003\u0002",
+    "\u0007\b\u0003\u0002\u0005\u0006\u0002,\u0002\n\u0003\u0002\u0002\u0002",
+    "\u0004\u0012\u0003\u0002\u0002\u0002\u0006\"\u0003\u0002\u0002\u0002",
+    "\b(\u0003\u0002\u0002\u0002\n\u000b\u0005\u0004\u0003\u0002\u000b\f",
+    "\u0007\u0002\u0002\u0003\f\u0003\u0003\u0002\u0002\u0002\r\u000e\b\u0003",
+    "\u0001\u0002\u000e\u0013\u0005\b\u0005\u0002\u000f\u0013\u0005\u0006",
+    "\u0004\u0002\u0010\u0011\t\u0002\u0002\u0002\u0011\u0013\u0005\u0004",
+    "\u0003\u0006\u0012\r\u0003\u0002\u0002\u0002\u0012\u000f\u0003\u0002",
+    "\u0002\u0002\u0012\u0010\u0003\u0002\u0002\u0002\u0013\u001f\u0003\u0002",
+    "\u0002\u0002\u0014\u0015\f\u0005\u0002\u0002\u0015\u0016\u0007\t\u0002",
+    "\u0002\u0016\u001e\u0005\u0004\u0003\u0005\u0017\u0018\f\u0004\u0002",
+    "\u0002\u0018\u0019\t\u0003\u0002\u0002\u0019\u001e\u0005\u0004\u0003",
+    "\u0005\u001a\u001b\f\u0003\u0002\u0002\u001b\u001c\t\u0002\u0002\u0002",
+    "\u001c\u001e\u0005\u0004\u0003\u0004\u001d\u0014\u0003\u0002\u0002\u0002",
+    "\u001d\u0017\u0003\u0002\u0002\u0002\u001d\u001a\u0003\u0002\u0002\u0002",
+    "\u001e!\u0003\u0002\u0002\u0002\u001f\u001d\u0003\u0002\u0002\u0002",
+    "\u001f \u0003\u0002\u0002\u0002 \u0005\u0003\u0002\u0002\u0002!\u001f",
+    "\u0003\u0002\u0002\u0002\"#\u0007\u0003\u0002\u0002#$\u0005\u0004\u0003",
+    "\u0002$%\u0007\u0004\u0002\u0002%\u0007\u0003\u0002\u0002\u0002&)\u0007",
+    "\n\u0002\u0002\')\u0007\u000b\u0002\u0002(&\u0003\u0002\u0002\u0002",
+    "(\'\u0003\u0002\u0002\u0002)\t\u0003\u0002\u0002\u0002\u0006\u0012\u001d",
+    "\u001f("].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -45,7 +47,7 @@ var sharedContextCache = new antlr4.PredictionContextCache();
 var literalNames = [ null, "'('", "')'", "'*'", "'/'", "'+'", "'-'", "'^'" ];
 
 var symbolicNames = [ null, "OPEN_PAREN", "CLOSE_PAREN", "ASTERISK", "SLASH", 
-                      "PLUS", "MINUS", "HAT", "UINT", "WS" ];
+                      "PLUS", "MINUS", "HAT", "UINT", "FLT", "WS" ];
 
 var ruleNames =  [ "input", "expr", "paren_expr", "num" ];
 
@@ -76,7 +78,8 @@ ExpressionParser.PLUS = 5;
 ExpressionParser.MINUS = 6;
 ExpressionParser.HAT = 7;
 ExpressionParser.UINT = 8;
-ExpressionParser.WS = 9;
+ExpressionParser.FLT = 9;
+ExpressionParser.WS = 10;
 
 ExpressionParser.RULE_input = 0;
 ExpressionParser.RULE_expr = 1;
@@ -386,6 +389,7 @@ ExpressionParser.prototype.expr = function(_p) {
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ExpressionParser.UINT:
+        case ExpressionParser.FLT:
             localctx = new Expr_numContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
@@ -600,18 +604,57 @@ function NumContext(parser, parent, invokingState) {
 NumContext.prototype = Object.create(antlr4.ParserRuleContext.prototype);
 NumContext.prototype.constructor = NumContext;
 
-NumContext.prototype.UINT = function() {
-    return this.getToken(ExpressionParser.UINT, 0);
+
+ 
+NumContext.prototype.copyFrom = function(ctx) {
+    antlr4.ParserRuleContext.prototype.copyFrom.call(this, ctx);
 };
 
-NumContext.prototype.accept = function(visitor) {
+
+function Num_floatContext(parser, ctx) {
+	NumContext.call(this, parser);
+    NumContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+Num_floatContext.prototype = Object.create(NumContext.prototype);
+Num_floatContext.prototype.constructor = Num_floatContext;
+
+ExpressionParser.Num_floatContext = Num_floatContext;
+
+Num_floatContext.prototype.FLT = function() {
+    return this.getToken(ExpressionParser.FLT, 0);
+};
+Num_floatContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ExpressionVisitor ) {
-        return visitor.visitNum(this);
+        return visitor.visitNum_float(this);
     } else {
         return visitor.visitChildren(this);
     }
 };
 
+
+function Num_uintContext(parser, ctx) {
+	NumContext.call(this, parser);
+    NumContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+Num_uintContext.prototype = Object.create(NumContext.prototype);
+Num_uintContext.prototype.constructor = Num_uintContext;
+
+ExpressionParser.Num_uintContext = Num_uintContext;
+
+Num_uintContext.prototype.UINT = function() {
+    return this.getToken(ExpressionParser.UINT, 0);
+};
+Num_uintContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ExpressionVisitor ) {
+        return visitor.visitNum_uint(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
 
 
 
@@ -622,9 +665,24 @@ ExpressionParser.prototype.num = function() {
     var localctx = new NumContext(this, this._ctx, this.state);
     this.enterRule(localctx, 6, ExpressionParser.RULE_num);
     try {
-        this.enterOuterAlt(localctx, 1);
-        this.state = 36;
-        this.match(ExpressionParser.UINT);
+        this.state = 38;
+        this._errHandler.sync(this);
+        switch(this._input.LA(1)) {
+        case ExpressionParser.UINT:
+            localctx = new Num_uintContext(this, localctx);
+            this.enterOuterAlt(localctx, 1);
+            this.state = 36;
+            this.match(ExpressionParser.UINT);
+            break;
+        case ExpressionParser.FLT:
+            localctx = new Num_floatContext(this, localctx);
+            this.enterOuterAlt(localctx, 2);
+            this.state = 37;
+            this.match(ExpressionParser.FLT);
+            break;
+        default:
+            throw new antlr4.error.NoViableAltException(this);
+        }
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
 	        localctx.exception = re;

@@ -22,14 +22,15 @@ CalcVisitor.prototype.visitExpr_additive = function(ctx) {
   if (!lhs.result || !rhs.result) {
     return {"result":false, "value":null, "error":{"lhs":lhs, "rhs":rhs}};
   }
+  var type = (lhs.type === "float" || rhs.type === "float") ? "float" : "int";
 
   //console.log(ctx.op);
   switch (ctx.op.type) {
   case ExpressionLexer.PLUS:
-    return {"result":true,"value":lhs.value + rhs.value};
+    return {"result":true,"value":lhs.value + rhs.value, "type":type};
     break;
   case ExpressionLexer.MINUS:
-    return {"result":true,"value":lhs.value - rhs.value};
+    return {"result":true,"value":lhs.value - rhs.value, "type":type};
     break;
   default:
     return {"result":false, "value":null, "error":"Unknown operator"};
@@ -47,9 +48,14 @@ CalcVisitor.prototype.visitExpr_power = function(ctx) {
     return {"result":false, "value":null, "error":{"lhs":lhs, "rhs":rhs}};
   }
   //console.log(ctx.op);
+  var type = (lhs.type === "float" || rhs.type === "float") ? "float" : "int";
+
   switch (ctx.op.type) {
   case ExpressionLexer.HAT:
-    return {"result":true, "value":lhs.value ** rhs.value};
+    if (rhs.value < 0) {
+        type = "float";
+    }
+    return {"result":true, "value":lhs.value ** rhs.value, "type":type};
     break;
   default:
     return {"result":false, "value":null, "error":"Unknown operator"};
@@ -70,17 +76,26 @@ CalcVisitor.prototype.visitExpr_multipricative = function(ctx) {
   //console.log(ctx.op);
   //console.log("lhs.value = "+lhs.value);
   //console.log("rhs.value = "+rhs.value);
+  var type = (lhs.type === "float" || rhs.type === "float") ? "float" : "int";
+
   switch (ctx.op.type) {
   case ExpressionLexer.ASTERISK:
     //console.log("--- *");
-    return {"result":true, "value":lhs.value * rhs.value};
+    return {"result":true, "value":lhs.value * rhs.value, "type":type};
     break;
   case ExpressionLexer.SLASH:
     //console.log("--- /");
     if (rhs.value === 0) {
-      return {"result":false, "value":null,"error":"Division by zero."};
+      if (lhs.value === 0) {
+        return {"result":true, "value":NaN};
+      } else {
+        return {"result":false, "value":null, "error":"Division by zero."};
+      }
     } else {
-      return {"result":true, "value":lhs.value / rhs.value};
+      if (!(lhs.value % rhs.value === 0)) {
+        type = "float";
+      }
+      return {"result":true, "value":lhs.value / rhs.value, "type":type};
     }
     break;
   default:
@@ -95,14 +110,14 @@ CalcVisitor.prototype.visitExpr_unary = function(ctx) {
   //console.log("-- visitExpr_unary");
   var expr = this.visit(ctx.ex);
   if (!expr.result) {
-    return {"result":false, "value":null, "error":{"epxr":expr}};
+    return {"result":false, "value":null, "error":{"expr":expr}};
   }
   //console.log(expr);
   switch (ctx.op.type) {
   case ExpressionLexer.PLUS:
     return expr;
   case ExpressionLexer.MINUS:
-    return {"result":true, "value":-1 * expr.value};
+    return {"result":true, "value":-1 * expr.value, "type":expr.type};
   default:
     return {"result":false, "value":null, "error":"Unknown operator"};
   }
@@ -131,16 +146,34 @@ CalcVisitor.prototype.visitParen_expr = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ExpressionParser#num.
-CalcVisitor.prototype.visitNum = function(ctx) {
-  //console.log("-- visitNum");
+// Visit a parse tree produced by ExpressionParser#num_uint.
+ExpressionVisitor.prototype.visitNum_uint = function(ctx) {
+  //console.log("-- visitNum_uint");
   var token = ctx.getToken(ExpressionLexer.UINT, 0);
   if (token != null) {
     var val = parseInt(token.symbol.text);
     //console.log("val = "+val);
-    return {"result": true, "value":val};
+    return {"result": true, "value":val, "type":"int"};
   }
   return {"result":false, "value":null, "error":"Unknown token"};
+};
+
+
+// Visit a parse tree produced by ExpressionParser#num_float.
+ExpressionVisitor.prototype.visitNum_float = function(ctx) {
+  //console.log("-- visitNum_float");
+  var token = ctx.getToken(ExpressionLexer.FLT, 0);
+  if (token != null) {
+    var val = parseFloat(token.symbol.text);
+    //console.log("val = "+val);
+    return {"result": true, "value":val, "type":"float"};
+  }
+  return {"result":false, "value":null, "error":"Unknown token"};
+};
+
+
+// Visit a parse tree produced by ExpressionParser#num.
+CalcVisitor.prototype.visitNum = function(ctx) {
 };
 
 
@@ -156,6 +189,7 @@ Calculator.prototype.constructor = Calculator;
 
 // Do calculation.
 Calculator.prototype.doCalc = function(input) {
+  console.log(input);
   var chars = new antlr4.InputStream(input);
   var lexer = new ExpressionLexer(chars);
   var tokens  = new antlr4.CommonTokenStream(lexer);

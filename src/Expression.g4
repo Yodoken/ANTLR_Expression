@@ -19,7 +19,8 @@ paren_expr
     ;
 
 num
-    : UINT
+    : UINT                                      #num_uint
+    | FLT                                       #num_float
     ;
 
 // 字句定義
@@ -31,4 +32,5 @@ PLUS: '+';
 MINUS: '-';
 HAT: '^';
 UINT: [0-9]+;
+FLT: [0-9]+ '.' [0-9]* ([Ee] [+-]? [0-9]+)?;
 WS: [ ¥t] -> skip;

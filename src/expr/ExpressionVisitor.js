@@ -60,8 +60,14 @@ ExpressionVisitor.prototype.visitParen_expr = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ExpressionParser#num.
-ExpressionVisitor.prototype.visitNum = function(ctx) {
+// Visit a parse tree produced by ExpressionParser#num_uint.
+ExpressionVisitor.prototype.visitNum_uint = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ExpressionParser#num_float.
+ExpressionVisitor.prototype.visitNum_float = function(ctx) {
   return this.visitChildren(ctx);
 };
 
