@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "antlr": "antlr -o src/expr -Dlanguage=JavaScript -visitor -no-listener -lib src -package expr -Xexact-output-dir src/Expression.g4",
     "start": "node src/index.js"
   },
   "author": "",
