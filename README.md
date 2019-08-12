@@ -1,4 +1,7 @@
-#セットアップ
-~~~npm install~~~
-#実行
-~~~npm run start~~~
+# セットアップ
+
+~~~ npm install ~~~
+
+# 実行
+
+~~~ npm run start ~~~
