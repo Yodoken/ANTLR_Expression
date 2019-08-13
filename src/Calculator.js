@@ -196,7 +196,7 @@ ExpressionVisitor.prototype.visitNum_float = function(ctx) {
 ExpressionVisitor.prototype.visitNum_var = function(ctx) {
  //console.log("-- visitNum_var");
  var token = ctx.getToken(ExpressionLexer.IDENTIFIER, 0);
- console.log('"'+token.symbol.text+'"');
+ //console.log('"'+token.symbol.text+'"');
  if (token.symbol.text in this.varList) {
    var val = this.varList[token.symbol.text];
    var type = Number.isInteger() ? "int" : "float";
@@ -238,8 +238,7 @@ Calculator.prototype.doCalc = function(input) {
   var parser = new ExpressionParser(tokens);
   parser.buildParseTrees = true;
   var tree = parser.input();
-
-  console.log(this.varList);
+  //console.log(this.varList);
 
   return tree.accept(new CalcVisitor(this.funcList, this.varList))[0];
 };

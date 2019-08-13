@@ -38,10 +38,9 @@ console.log(calculator.doCalc("(Sin(3.141592/2) + Cos(3.141592/2))*3")); // Func
 // Homework-4
 calculator.registerConst("ZERO", 0);
 calculator.registerConst("PI", Math.PI);
-calculator.registerConst("PI2", Math.PI);
 console.log(calculator.doCalc("PI"));               // PI
-console.log(calculator.doCalc("PI2"));              // PI
 console.log(calculator.doCalc("ZERO"));             // ZERO
 console.log(calculator.doCalc("Sin(PI / 2)"));      // 
 console.log(calculator.doCalc("Cos(PI * 2)"));      // 
+console.log(calculator.doCalc("Cos(PI * 2) * ZERO"));// 
 
