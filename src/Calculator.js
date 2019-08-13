@@ -6,9 +6,10 @@ var ExpressionVisitor = require('./expr/ExpressionVisitor').ExpressionVisitor;
 
 //////////////////
 // CalcVisitor
-function CalcVisitor(funcList) {
+function CalcVisitor(funcList, varList) {
     ExpressionVisitor.call(this);
     this.funcList = funcList;
+    this.varList = varList;
     return this;
 }
 
@@ -111,11 +112,11 @@ CalcVisitor.prototype.visitExpr_multipricative = function(ctx) {
 ExpressionVisitor.prototype.visitExpr_function = function(ctx) {
   //console.log("-- visitExpr_function");
   var token = ctx.getToken(ExpressionLexer.IDENTIFIER, 0);
-  var arg = this.visit(ctx.ex);
+  var arg = this.visit(ctx.arg);
   //console.log(ctx.id);
   //console.log(ctx.ex);
   //console.log(token);
-  if (this.funcList[token.symbol.text]) {
+  if (this.funcList[token.symbol.text]) { // inキーワードは使用しない
     func = this.funcList[token.symbol.text];
     return func(arg);
   } else {
@@ -191,15 +192,27 @@ ExpressionVisitor.prototype.visitNum_float = function(ctx) {
 };
 
 
-// Visit a parse tree produced by ExpressionParser#num.
-CalcVisitor.prototype.visitNum = function(ctx) {
+// Visit a parse tree produced by ExpressionParser#num_var.
+ExpressionVisitor.prototype.visitNum_var = function(ctx) {
+ //console.log("-- visitNum_var");
+ var token = ctx.getToken(ExpressionLexer.IDENTIFIER, 0);
+ console.log('"'+token.symbol.text+'"');
+ if (token.symbol.text in this.varList) {
+   var val = this.varList[token.symbol.text];
+   var type = Number.isInteger() ? "int" : "float";
+   return {"result":true, "value":val, "type":type};
+ } else {
+   return {"result":false, "value":null, "error":"Unknown variable name."};
+ }
 };
+
 
 
 //////////////////
 // Calculator
 function Calculator() {
   this.funcList = {};
+  this.varList = {};
   return this;
 }
 
@@ -207,8 +220,13 @@ function Calculator() {
 Calculator.prototype.constructor = Calculator;
 
 // Register function.
-Calculator.prototype.registerFunction = function(funcname, func) {
-  this.funcList[funcname] = func;
+Calculator.prototype.registerFunction = function(funcName, func) {
+  this.funcList[funcName] = func;
+}
+
+// Register const value.
+Calculator.prototype.registerConst = function(varName, value) {
+  this.varList[varName] = value;
 }
 
 // Do calculation.
@@ -220,8 +238,10 @@ Calculator.prototype.doCalc = function(input) {
   var parser = new ExpressionParser(tokens);
   parser.buildParseTrees = true;
   var tree = parser.input();
-  
-  return tree.accept(new CalcVisitor(this.funcList))[0];
+
+  console.log(this.varList);
+
+  return tree.accept(new CalcVisitor(this.funcList, this.varList))[0];
 };
 
 exports.Calculator = Calculator;

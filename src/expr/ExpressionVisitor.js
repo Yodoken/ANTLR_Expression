@@ -78,5 +78,11 @@ ExpressionVisitor.prototype.visitNum_float = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ExpressionParser#num_var.
+ExpressionVisitor.prototype.visitNum_var = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 
 exports.ExpressionVisitor = ExpressionVisitor;
