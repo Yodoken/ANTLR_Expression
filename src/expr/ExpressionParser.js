@@ -7,36 +7,38 @@ var grammarFileName = "Expression.g4";
 
 
 var serializedATN = ["\u0003\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964",
-    "\u0003\r-\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t\u0004",
-    "\u0004\u0005\t\u0005\u0003\u0002\u0003\u0002\u0003\u0002\u0003\u0003",
+    "\u0003\u000e1\u0004\u0002\t\u0002\u0004\u0003\t\u0003\u0004\u0004\t",
+    "\u0004\u0004\u0005\t\u0005\u0003\u0002\u0003\u0002\u0003\u0002\u0003",
     "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0005\u0003\u0015\n\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
-    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0007",
-    "\u0003 \n\u0003\f\u0003\u000e\u0003#\u000b\u0003\u0003\u0004\u0003\u0004",
-    "\u0003\u0004\u0003\u0004\u0003\u0005\u0003\u0005\u0005\u0005+\n\u0005",
-    "\u0003\u0005\u0002\u0003\u0004\u0006\u0002\u0004\u0006\b\u0002\u0004",
-    "\u0003\u0002\u0007\b\u0003\u0002\u0005\u0006\u0002/\u0002\n\u0003\u0002",
-    "\u0002\u0002\u0004\u0014\u0003\u0002\u0002\u0002\u0006$\u0003\u0002",
-    "\u0002\u0002\b*\u0003\u0002\u0002\u0002\n\u000b\u0005\u0004\u0003\u0002",
-    "\u000b\f\u0007\u0002\u0002\u0003\f\u0003\u0003\u0002\u0002\u0002\r\u000e",
-    "\b\u0003\u0001\u0002\u000e\u0015\u0005\b\u0005\u0002\u000f\u0015\u0005",
-    "\u0006\u0004\u0002\u0010\u0011\u0007\f\u0002\u0002\u0011\u0015\u0005",
-    "\u0006\u0004\u0002\u0012\u0013\t\u0002\u0002\u0002\u0013\u0015\u0005",
-    "\u0004\u0003\u0006\u0014\r\u0003\u0002\u0002\u0002\u0014\u000f\u0003",
-    "\u0002\u0002\u0002\u0014\u0010\u0003\u0002\u0002\u0002\u0014\u0012\u0003",
-    "\u0002\u0002\u0002\u0015!\u0003\u0002\u0002\u0002\u0016\u0017\f\u0005",
-    "\u0002\u0002\u0017\u0018\u0007\t\u0002\u0002\u0018 \u0005\u0004\u0003",
-    "\u0005\u0019\u001a\f\u0004\u0002\u0002\u001a\u001b\t\u0003\u0002\u0002",
-    "\u001b \u0005\u0004\u0003\u0005\u001c\u001d\f\u0003\u0002\u0002\u001d",
-    "\u001e\t\u0002\u0002\u0002\u001e \u0005\u0004\u0003\u0004\u001f\u0016",
-    "\u0003\u0002\u0002\u0002\u001f\u0019\u0003\u0002\u0002\u0002\u001f\u001c",
-    "\u0003\u0002\u0002\u0002 #\u0003\u0002\u0002\u0002!\u001f\u0003\u0002",
-    "\u0002\u0002!\"\u0003\u0002\u0002\u0002\"\u0005\u0003\u0002\u0002\u0002",
-    "#!\u0003\u0002\u0002\u0002$%\u0007\u0003\u0002\u0002%&\u0005\u0004\u0003",
-    "\u0002&\'\u0007\u0004\u0002\u0002\'\u0007\u0003\u0002\u0002\u0002(+",
-    "\u0007\n\u0002\u0002)+\u0007\u000b\u0002\u0002*(\u0003\u0002\u0002\u0002",
-    "*)\u0003\u0002\u0002\u0002+\t\u0003\u0002\u0002\u0002\u0006\u0014\u001f",
-    "!*"].join("");
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0005\u0003\u0018\n\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003\u0003",
+    "\u0003\u0003\u0003\u0003\u0003\u0003\u0007\u0003#\n\u0003\f\u0003\u000e",
+    "\u0003&\u000b\u0003\u0003\u0004\u0003\u0004\u0003\u0004\u0003\u0004",
+    "\u0003\u0005\u0003\u0005\u0003\u0005\u0005\u0005/\n\u0005\u0003\u0005",
+    "\u0002\u0003\u0004\u0006\u0002\u0004\u0006\b\u0002\u0004\u0003\u0002",
+    "\u0007\b\u0003\u0002\u0005\u0006\u00024\u0002\n\u0003\u0002\u0002\u0002",
+    "\u0004\u0017\u0003\u0002\u0002\u0002\u0006\'\u0003\u0002\u0002\u0002",
+    "\b.\u0003\u0002\u0002\u0002\n\u000b\u0005\u0004\u0003\u0002\u000b\f",
+    "\u0007\u0002\u0002\u0003\f\u0003\u0003\u0002\u0002\u0002\r\u000e\b\u0003",
+    "\u0001\u0002\u000e\u0018\u0005\b\u0005\u0002\u000f\u0018\u0005\u0006",
+    "\u0004\u0002\u0010\u0011\u0007\r\u0002\u0002\u0011\u0012\u0007\u0003",
+    "\u0002\u0002\u0012\u0013\u0005\u0004\u0003\u0002\u0013\u0014\u0007\u0004",
+    "\u0002\u0002\u0014\u0018\u0003\u0002\u0002\u0002\u0015\u0016\t\u0002",
+    "\u0002\u0002\u0016\u0018\u0005\u0004\u0003\u0006\u0017\r\u0003\u0002",
+    "\u0002\u0002\u0017\u000f\u0003\u0002\u0002\u0002\u0017\u0010\u0003\u0002",
+    "\u0002\u0002\u0017\u0015\u0003\u0002\u0002\u0002\u0018$\u0003\u0002",
+    "\u0002\u0002\u0019\u001a\f\u0005\u0002\u0002\u001a\u001b\u0007\t\u0002",
+    "\u0002\u001b#\u0005\u0004\u0003\u0005\u001c\u001d\f\u0004\u0002\u0002",
+    "\u001d\u001e\t\u0003\u0002\u0002\u001e#\u0005\u0004\u0003\u0005\u001f",
+    " \f\u0003\u0002\u0002 !\t\u0002\u0002\u0002!#\u0005\u0004\u0003\u0004",
+    "\"\u0019\u0003\u0002\u0002\u0002\"\u001c\u0003\u0002\u0002\u0002\"\u001f",
+    "\u0003\u0002\u0002\u0002#&\u0003\u0002\u0002\u0002$\"\u0003\u0002\u0002",
+    "\u0002$%\u0003\u0002\u0002\u0002%\u0005\u0003\u0002\u0002\u0002&$\u0003",
+    "\u0002\u0002\u0002\'(\u0007\u0003\u0002\u0002()\u0005\u0004\u0003\u0002",
+    ")*\u0007\u0004\u0002\u0002*\u0007\u0003\u0002\u0002\u0002+/\u0007\u000b",
+    "\u0002\u0002,/\u0007\f\u0002\u0002-/\u0007\r\u0002\u0002.+\u0003\u0002",
+    "\u0002\u0002.,\u0003\u0002\u0002\u0002.-\u0003\u0002\u0002\u0002/\t",
+    "\u0003\u0002\u0002\u0002\u0006\u0017\"$."].join("");
 
 
 var atn = new antlr4.atn.ATNDeserializer().deserialize(serializedATN);
@@ -45,10 +47,11 @@ var decisionsToDFA = atn.decisionToState.map( function(ds, index) { return new a
 
 var sharedContextCache = new antlr4.PredictionContextCache();
 
-var literalNames = [ null, "'('", "')'", "'*'", "'/'", "'+'", "'-'", "'^'" ];
+var literalNames = [ null, "'('", "')'", "'*'", "'/'", "'+'", "'-'", "'^'", 
+                     "','" ];
 
 var symbolicNames = [ null, "OPEN_PAREN", "CLOSE_PAREN", "ASTERISK", "SLASH", 
-                      "PLUS", "MINUS", "HAT", "UINT", "FLT", "IDENTIFIER", 
+                      "PLUS", "MINUS", "HAT", "COMMA", "UINT", "FLT", "IDENTIFIER", 
                       "WS" ];
 
 var ruleNames =  [ "input", "expr", "paren_expr", "num" ];
@@ -79,10 +82,11 @@ ExpressionParser.SLASH = 4;
 ExpressionParser.PLUS = 5;
 ExpressionParser.MINUS = 6;
 ExpressionParser.HAT = 7;
-ExpressionParser.UINT = 8;
-ExpressionParser.FLT = 9;
-ExpressionParser.IDENTIFIER = 10;
-ExpressionParser.WS = 11;
+ExpressionParser.COMMA = 8;
+ExpressionParser.UINT = 9;
+ExpressionParser.FLT = 10;
+ExpressionParser.IDENTIFIER = 11;
+ExpressionParser.WS = 12;
 
 ExpressionParser.RULE_input = 0;
 ExpressionParser.RULE_expr = 1;
@@ -319,8 +323,8 @@ Expr_multipricativeContext.prototype.accept = function(visitor) {
 
 function Expr_functionContext(parser, ctx) {
 	ExprContext.call(this, parser);
-    this.id = null; // Token;
-    this.ex = null; // Paren_exprContext;
+    this.func = null; // Token;
+    this.arg = null; // ExprContext;
     ExprContext.prototype.copyFrom.call(this, ctx);
     return this;
 }
@@ -330,12 +334,20 @@ Expr_functionContext.prototype.constructor = Expr_functionContext;
 
 ExpressionParser.Expr_functionContext = Expr_functionContext;
 
+Expr_functionContext.prototype.OPEN_PAREN = function() {
+    return this.getToken(ExpressionParser.OPEN_PAREN, 0);
+};
+
+Expr_functionContext.prototype.CLOSE_PAREN = function() {
+    return this.getToken(ExpressionParser.CLOSE_PAREN, 0);
+};
+
 Expr_functionContext.prototype.IDENTIFIER = function() {
     return this.getToken(ExpressionParser.IDENTIFIER, 0);
 };
 
-Expr_functionContext.prototype.paren_expr = function() {
-    return this.getTypedRuleContext(Paren_exprContext,0);
+Expr_functionContext.prototype.expr = function() {
+    return this.getTypedRuleContext(ExprContext,0);
 };
 Expr_functionContext.prototype.accept = function(visitor) {
     if ( visitor instanceof ExpressionVisitor ) {
@@ -417,11 +429,11 @@ ExpressionParser.prototype.expr = function(_p) {
     var _la = 0; // Token type
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 18;
+        this.state = 21;
         this._errHandler.sync(this);
-        switch(this._input.LA(1)) {
-        case ExpressionParser.UINT:
-        case ExpressionParser.FLT:
+        var la_ = this._interp.adaptivePredict(this._input,0,this._ctx);
+        switch(la_) {
+        case 1:
             localctx = new Expr_numContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
@@ -429,28 +441,34 @@ ExpressionParser.prototype.expr = function(_p) {
             this.state = 12;
             localctx.no = this.num();
             break;
-        case ExpressionParser.OPEN_PAREN:
+
+        case 2:
             localctx = new Expr_noneContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
             this.state = 13;
             localctx.ex = this.paren_expr();
             break;
-        case ExpressionParser.IDENTIFIER:
+
+        case 3:
             localctx = new Expr_functionContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
             this.state = 14;
-            localctx.id = this.match(ExpressionParser.IDENTIFIER);
+            localctx.func = this.match(ExpressionParser.IDENTIFIER);
             this.state = 15;
-            localctx.ex = this.paren_expr();
+            this.match(ExpressionParser.OPEN_PAREN);
+            this.state = 16;
+            localctx.arg = this.expr(0);
+            this.state = 17;
+            this.match(ExpressionParser.CLOSE_PAREN);
             break;
-        case ExpressionParser.PLUS:
-        case ExpressionParser.MINUS:
+
+        case 4:
             localctx = new Expr_unaryContext(this, localctx);
             this._ctx = localctx;
             _prevctx = localctx;
-            this.state = 16;
+            this.state = 19;
             localctx.op = this._input.LT(1);
             _la = this._input.LA(1);
             if(!(_la===ExpressionParser.PLUS || _la===ExpressionParser.MINUS)) {
@@ -460,14 +478,13 @@ ExpressionParser.prototype.expr = function(_p) {
             	this._errHandler.reportMatch(this);
                 this.consume();
             }
-            this.state = 17;
+            this.state = 20;
             localctx.ex = this.expr(4);
             break;
-        default:
-            throw new antlr4.error.NoViableAltException(this);
+
         }
         this._ctx.stop = this._input.LT(-1);
-        this.state = 31;
+        this.state = 34;
         this._errHandler.sync(this);
         var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
         while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
@@ -476,7 +493,7 @@ ExpressionParser.prototype.expr = function(_p) {
                     this.triggerExitRuleEvent();
                 }
                 _prevctx = localctx;
-                this.state = 29;
+                this.state = 32;
                 this._errHandler.sync(this);
                 var la_ = this._interp.adaptivePredict(this._input,1,this._ctx);
                 switch(la_) {
@@ -484,13 +501,13 @@ ExpressionParser.prototype.expr = function(_p) {
                     localctx = new Expr_powerContext(this, new ExprContext(this, _parentctx, _parentState));
                     localctx.lhs = _prevctx;
                     this.pushNewRecursionContext(localctx, _startState, ExpressionParser.RULE_expr);
-                    this.state = 20;
+                    this.state = 23;
                     if (!( this.precpred(this._ctx, 3))) {
                         throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 3)");
                     }
-                    this.state = 21;
+                    this.state = 24;
                     localctx.op = this.match(ExpressionParser.HAT);
-                    this.state = 22;
+                    this.state = 25;
                     localctx.rhs = this.expr(3);
                     break;
 
@@ -498,11 +515,11 @@ ExpressionParser.prototype.expr = function(_p) {
                     localctx = new Expr_multipricativeContext(this, new ExprContext(this, _parentctx, _parentState));
                     localctx.lhs = _prevctx;
                     this.pushNewRecursionContext(localctx, _startState, ExpressionParser.RULE_expr);
-                    this.state = 23;
+                    this.state = 26;
                     if (!( this.precpred(this._ctx, 2))) {
                         throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 2)");
                     }
-                    this.state = 24;
+                    this.state = 27;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!(_la===ExpressionParser.ASTERISK || _la===ExpressionParser.SLASH)) {
@@ -512,7 +529,7 @@ ExpressionParser.prototype.expr = function(_p) {
                     	this._errHandler.reportMatch(this);
                         this.consume();
                     }
-                    this.state = 25;
+                    this.state = 28;
                     localctx.rhs = this.expr(3);
                     break;
 
@@ -520,11 +537,11 @@ ExpressionParser.prototype.expr = function(_p) {
                     localctx = new Expr_additiveContext(this, new ExprContext(this, _parentctx, _parentState));
                     localctx.lhs = _prevctx;
                     this.pushNewRecursionContext(localctx, _startState, ExpressionParser.RULE_expr);
-                    this.state = 26;
+                    this.state = 29;
                     if (!( this.precpred(this._ctx, 1))) {
                         throw new antlr4.error.FailedPredicateException(this, "this.precpred(this._ctx, 1)");
                     }
-                    this.state = 27;
+                    this.state = 30;
                     localctx.op = this._input.LT(1);
                     _la = this._input.LA(1);
                     if(!(_la===ExpressionParser.PLUS || _la===ExpressionParser.MINUS)) {
@@ -534,13 +551,13 @@ ExpressionParser.prototype.expr = function(_p) {
                     	this._errHandler.reportMatch(this);
                         this.consume();
                     }
-                    this.state = 28;
+                    this.state = 31;
                     localctx.rhs = this.expr(2);
                     break;
 
                 } 
             }
-            this.state = 33;
+            this.state = 36;
             this._errHandler.sync(this);
             _alt = this._interp.adaptivePredict(this._input,2,this._ctx);
         }
@@ -608,11 +625,11 @@ ExpressionParser.prototype.paren_expr = function() {
     this.enterRule(localctx, 4, ExpressionParser.RULE_paren_expr);
     try {
         this.enterOuterAlt(localctx, 1);
-        this.state = 34;
+        this.state = 37;
         this.match(ExpressionParser.OPEN_PAREN);
-        this.state = 35;
+        this.state = 38;
         localctx.ex = this.expr(0);
-        this.state = 36;
+        this.state = 39;
         this.match(ExpressionParser.CLOSE_PAREN);
     } catch (re) {
     	if(re instanceof antlr4.error.RecognitionException) {
@@ -698,6 +715,29 @@ Num_uintContext.prototype.accept = function(visitor) {
 };
 
 
+function Num_varContext(parser, ctx) {
+	NumContext.call(this, parser);
+    NumContext.prototype.copyFrom.call(this, ctx);
+    return this;
+}
+
+Num_varContext.prototype = Object.create(NumContext.prototype);
+Num_varContext.prototype.constructor = Num_varContext;
+
+ExpressionParser.Num_varContext = Num_varContext;
+
+Num_varContext.prototype.IDENTIFIER = function() {
+    return this.getToken(ExpressionParser.IDENTIFIER, 0);
+};
+Num_varContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ExpressionVisitor ) {
+        return visitor.visitNum_var(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
+
 
 ExpressionParser.NumContext = NumContext;
 
@@ -706,20 +746,26 @@ ExpressionParser.prototype.num = function() {
     var localctx = new NumContext(this, this._ctx, this.state);
     this.enterRule(localctx, 6, ExpressionParser.RULE_num);
     try {
-        this.state = 40;
+        this.state = 44;
         this._errHandler.sync(this);
         switch(this._input.LA(1)) {
         case ExpressionParser.UINT:
             localctx = new Num_uintContext(this, localctx);
             this.enterOuterAlt(localctx, 1);
-            this.state = 38;
+            this.state = 41;
             this.match(ExpressionParser.UINT);
             break;
         case ExpressionParser.FLT:
             localctx = new Num_floatContext(this, localctx);
             this.enterOuterAlt(localctx, 2);
-            this.state = 39;
+            this.state = 42;
             this.match(ExpressionParser.FLT);
+            break;
+        case ExpressionParser.IDENTIFIER:
+            localctx = new Num_varContext(this, localctx);
+            this.enterOuterAlt(localctx, 3);
+            this.state = 43;
+            this.match(ExpressionParser.IDENTIFIER);
             break;
         default:
             throw new antlr4.error.NoViableAltException(this);

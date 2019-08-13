@@ -22,6 +22,7 @@ paren_expr
 num
     : UINT                                      #num_uint
     | FLT                                       #num_float
+    | IDENTIFIER                                #num_var
     ;
 
 // 字句定義
