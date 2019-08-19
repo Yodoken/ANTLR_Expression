@@ -30,6 +30,12 @@ ExpressionVisitor.prototype.visitExpr_num = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ExpressionParser#expr_string.
+ExpressionVisitor.prototype.visitExpr_string = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
 // Visit a parse tree produced by ExpressionParser#expr_power.
 ExpressionVisitor.prototype.visitExpr_power = function(ctx) {
   return this.visitChildren(ctx);
@@ -62,6 +68,12 @@ ExpressionVisitor.prototype.visitExpr_none = function(ctx) {
 
 // Visit a parse tree produced by ExpressionParser#paren_expr.
 ExpressionVisitor.prototype.visitParen_expr = function(ctx) {
+  return this.visitChildren(ctx);
+};
+
+
+// Visit a parse tree produced by ExpressionParser#str.
+ExpressionVisitor.prototype.visitStr = function(ctx) {
   return this.visitChildren(ctx);
 };
 

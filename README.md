@@ -13,3 +13,8 @@ npm run antlr
 ```
 npm run start
 ```
+
+# テスト実行
+```
+npm run test
+```
